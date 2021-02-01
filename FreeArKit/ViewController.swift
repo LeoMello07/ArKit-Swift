@@ -11,10 +11,11 @@ import ARKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var arView: ARView!               // tela do ArKit que renderiza os objetos
-    let iconBack = UIImage(named: "arrowBack")  // icone de seta
-    let iconShare = UIImage(named: "shareIcon") // icone de compartilhar
-    var popUpView = PopOverViewController()     // instância da classe do popOver
+    @IBOutlet var arView: ARView!                   // tela do ArKit que renderiza os objetos
+    let iconBack = UIImage(named: "arrowBack")      // icone de seta
+    let iconShare = UIImage(named: "shareIcon")     // icone de compartilhar
+    let letreiro = UIImage(named: "letreirobranco") // icone de letreiro
+    var popUpView = PopOverViewController()         // instância da classe do popOver
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,8 @@ class ViewController: UIViewController {
         // renderizando o objeto, no caso a função loadBlack é criada automaticamente pelo Experience. Qualquer .usdz que for colocado no reality composer o xcode ja cria a função pra renderizar.
         let blackShade = try! Experience.loadBlack()
         arView.scene.anchors.append(blackShade)
-        
+    
+        renderLetreiro()
         buttons()
     }
     
@@ -35,7 +37,7 @@ class ViewController: UIViewController {
         backButton()
         shareButton()
     }
-    
+
     //MARK: - Botões.
     
     // Botão para adicionar no carrinho
@@ -71,8 +73,33 @@ class ViewController: UIViewController {
         button.setImage(iconShare, for: [])
         button.setTitle("Compartilhar", for: [])
         button.layer.cornerRadius = 6
+        button.addTarget(self, action: #selector(captureScreenshot), for: .touchUpInside)
         
         arView.addSubview(button)
+    }
+    
+    @objc func imageWasSaved(_ image: UIImage, error: Error?, context: UnsafeMutableRawPointer) {
+          if let error = error {
+              print(error.localizedDescription)
+              return
+          }
+          print("Imagem salva na galeria de fotos.")
+          UIApplication.shared.open(URL(string:"photos-redirect://")!)
+      }
+    
+    @objc func captureScreenshot(){
+        var _ = arView.snapshot(saveToHDR: true, completion:{ (image) in
+            UIImageWriteToSavedPhotosAlbum(image!, self, #selector(self.imageWasSaved), nil)
+        })
+     }
+
+    
+    func renderLetreiro(){
+        
+        let imageView = UIImageView(image: letreiro!)
+        imageView.frame = CGRect(x: 145, y: 75, width: 128, height: 28.94)
+        
+        arView.addSubview(imageView)
     }
     
    //MARK: - Funções
@@ -89,5 +116,15 @@ class ViewController: UIViewController {
     // Apenas executa assim que o timer acabar com os 3 segundos colocados no timeInterval. E remove o popOver
     @objc func fireTimer() {
         popUpView.view.removeFromSuperview()
+    }
+}
+
+extension UIWindow {
+    static var key: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
+        } else {
+            return UIApplication.shared.keyWindow
+        }
     }
 }

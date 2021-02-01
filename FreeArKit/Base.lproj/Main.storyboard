@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arView>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="arView" destination="8bC-Xf-vdC" id="TPV-4x-avp"/>
                     </connections>
