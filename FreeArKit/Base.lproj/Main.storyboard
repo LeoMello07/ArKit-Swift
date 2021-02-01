@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--ARView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="target" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="FreeArKit" customModuleProvider="target" sceneMemberID="viewController">
                     <arView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -22,5 +24,70 @@
             </objects>
             <point key="canvasLocation" x="138" y="134"/>
         </scene>
+        <!--Pop Over View Controller-->
+        <scene sceneID="EZ1-QO-Sqx">
+            <objects>
+                <viewController storyboardIdentifier="popOverViewController" id="Mig-t5-Tlw" customClass="PopOverViewController" customModule="FreeArKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0EF-q6-1ca">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-NF-KEM">
+                                <rect key="frame" x="27" y="791" width="360" height="63"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicionar ao carrinho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er2-50-1LS">
+                                        <rect key="frame" x="24" y="19" width="137.5" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFS-sh-YrK">
+                                        <rect key="frame" x="213" y="21" width="131" height="24"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="17"/>
+                                        <state key="normal" title="VER CARRINHO">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eFS-sh-YrK" secondAttribute="trailing" constant="16" id="2Ty-9T-BKc"/>
+                                    <constraint firstAttribute="height" constant="63" id="2ja-ij-Yc7"/>
+                                    <constraint firstItem="er2-50-1LS" firstAttribute="top" secondItem="ec1-NF-KEM" secondAttribute="top" constant="19" id="3TI-g7-cxx"/>
+                                    <constraint firstItem="eFS-sh-YrK" firstAttribute="top" secondItem="ec1-NF-KEM" secondAttribute="top" constant="21" id="Ubu-5a-XqM"/>
+                                    <constraint firstItem="er2-50-1LS" firstAttribute="leading" secondItem="ec1-NF-KEM" secondAttribute="leading" constant="24" id="Y4R-Ih-IOd"/>
+                                    <constraint firstAttribute="width" constant="360" id="aRu-ww-a7f"/>
+                                    <constraint firstAttribute="bottom" secondItem="eFS-sh-YrK" secondAttribute="bottom" constant="18" id="d2j-y9-1vz"/>
+                                    <constraint firstAttribute="bottom" secondItem="er2-50-1LS" secondAttribute="bottom" constant="24" id="jdk-AW-s88"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hbq-oS-kZI"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ec1-NF-KEM" firstAttribute="leading" secondItem="Hbq-oS-kZI" secondAttribute="leading" constant="27" id="OPN-Hi-X2R"/>
+                            <constraint firstItem="ec1-NF-KEM" firstAttribute="bottom" secondItem="Hbq-oS-kZI" secondAttribute="bottom" constant="-8" id="jXc-la-Vd8"/>
+                            <constraint firstItem="Hbq-oS-kZI" firstAttribute="trailing" secondItem="ec1-NF-KEM" secondAttribute="trailing" constant="27" id="n2n-92-tdf"/>
+                            <constraint firstItem="ec1-NF-KEM" firstAttribute="top" secondItem="Hbq-oS-kZI" secondAttribute="top" constant="747" id="vWh-8j-uxC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addCartLabel" destination="er2-50-1LS" id="bFe-k3-iMg"/>
+                        <outlet property="container" destination="ec1-NF-KEM" id="HWL-m0-lIv"/>
+                        <outlet property="seeCartButton" destination="eFS-sh-YrK" id="kmh-s6-cmb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wc9-ff-LTQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="134"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

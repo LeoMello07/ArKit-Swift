@@ -1,3 +1,12 @@
 [
-
+  {
+    "libraryIdentifier" : "26951151c78c60588051e15f51156844",
+    "format" : "model",
+    "displayName" : "sun_glasses.usdz"
+  },
+  {
+    "libraryIdentifier" : "bed410cbb0f64825a530223833b4bdaa",
+    "format" : "model",
+    "displayName" : "minion-glasses.reality"
+  }
 ]

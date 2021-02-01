@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6278A60925C343C30005E5BB /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6278A60825C343C30005E5BB /* PopOverViewController.swift */; };
 		629997BA25C2EE4E001533E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629997B925C2EE4E001533E3 /* AppDelegate.swift */; };
 		629997BC25C2EE4E001533E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629997BB25C2EE4E001533E3 /* ViewController.swift */; };
-		629997BE25C2EE4E001533E3 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 629997BD25C2EE4E001533E3 /* Experience.rcproject */; };
 		629997C125C2EE4E001533E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629997BF25C2EE4E001533E3 /* Main.storyboard */; };
 		629997C325C2EE53001533E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629997C225C2EE53001533E3 /* Assets.xcassets */; };
 		629997C625C2EE53001533E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629997C425C2EE53001533E3 /* LaunchScreen.storyboard */; };
+		629FA00925C2FFCF00992D2F /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 629FA00825C2FFCF00992D2F /* Experience.rcproject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6278A60825C343C30005E5BB /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		629997B625C2EE4E001533E3 /* FreeArKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeArKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629997B925C2EE4E001533E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629997BB25C2EE4E001533E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		629997BD25C2EE4E001533E3 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		629997C025C2EE4E001533E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		629997C225C2EE53001533E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		629997C525C2EE53001533E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629997C725C2EE53001533E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		629FA00825C2FFCF00992D2F /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				629997B925C2EE4E001533E3 /* AppDelegate.swift */,
 				629997BB25C2EE4E001533E3 /* ViewController.swift */,
-				629997BD25C2EE4E001533E3 /* Experience.rcproject */,
+				629FA00825C2FFCF00992D2F /* Experience.rcproject */,
 				629997BF25C2EE4E001533E3 /* Main.storyboard */,
 				629997C225C2EE53001533E3 /* Assets.xcassets */,
 				629997C425C2EE53001533E3 /* LaunchScreen.storyboard */,
 				629997C725C2EE53001533E3 /* Info.plist */,
+				6278A60825C343C30005E5BB /* PopOverViewController.swift */,
 			);
 			path = FreeArKit;
 			sourceTree = "<group>";
@@ -137,9 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6278A60925C343C30005E5BB /* PopOverViewController.swift in Sources */,
 				629997BC25C2EE4E001533E3 /* ViewController.swift in Sources */,
 				629997BA25C2EE4E001533E3 /* AppDelegate.swift in Sources */,
-				629997BE25C2EE4E001533E3 /* Experience.rcproject in Sources */,
+				629FA00925C2FFCF00992D2F /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
